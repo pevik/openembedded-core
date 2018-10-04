@@ -11,10 +11,7 @@ SRC_URI += "\
             file://debug.patch \
             file://unixccompiler.patch \
             file://nohostlibs.patch \
-            file://multilib.patch \
-            file://add-md5module-support.patch \
             file://builddir.patch \
-            file://parallel-makeinst-create-bindir.patch \
             file://revert_use_of_sysconfigdata.patch \
            "
 

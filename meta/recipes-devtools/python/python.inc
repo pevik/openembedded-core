@@ -13,6 +13,9 @@ SRC_URI = "http://www.python.org/ftp/python/${PV}/Python-${PV}.tar.xz \
            file://0003-bpo-34834-Fix-test_ssl.test_options-to-account-for-O.patch \
            file://0004-bpo-34836-fix-test_default_ecdh_curve-needs-no-tlsv1.patch \
            file://0001-bpo-33354-Fix-test_ssl-when-a-filename-cannot-be-enc.patch \
+           file://multilib.patch \
+           file://add-md5module-support.patch \
+           file://parallel-makeinst-create-bindir.patch \
            "
 
 SRC_URI[md5sum] = "a80ae3cc478460b922242f43a1b4094d"

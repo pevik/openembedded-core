@@ -12,10 +12,8 @@ SRC_URI += "\
   file://03-fix-tkinter-detection.patch \
   file://06-avoid_usr_lib_termcap_path_in_linking.patch \
   ${DISTRO_SRC_URI} \
-  file://multilib.patch \
   file://cgi_py.patch \
   file://setup_py_skip_cross_import_check.patch \
-  file://add-md5module-support.patch \
   file://host_include_contamination.patch \
   file://fix_for_using_different_libdir.patch \
   file://setuptweaks.patch \
@@ -26,7 +24,6 @@ SRC_URI += "\
   file://python-2.7.3-remove-bsdb-rpath.patch \
   file://fix-makefile-for-ptest.patch \
   file://run-ptest \
-  file://parallel-makeinst-create-bindir.patch \
   file://use_sysroot_ncurses_instead_of_host.patch \
   file://add-CROSSPYTHONPATH-for-PYTHON_FOR_BUILD.patch \
   file://pass-missing-libraries-to-Extension-for-mul.patch \
