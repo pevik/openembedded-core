@@ -24,23 +24,11 @@ TUNE_CCARGS:remove:x86-64 = "-mfpmath=sse"
 
 CFLAGS:append:powerpc64 = " -D__SANE_USERSPACE_TYPES__"
 CFLAGS:append:mipsarchn64 = " -D__SANE_USERSPACE_TYPES__"
-SRCREV = "6f88e0f6f1d6eb12c48c902f50f47ecbd3b0f18a"
+SRCREV = "b763f81998f19f783982d3937d1fd05bcf649c16"
 
 SRC_URI = "git://github.com/linux-test-project/ltp.git;branch=master;protocol=https \
            file://0001-Remove-OOM-tests-from-runtest-mm.patch \
            file://disable_hanging_tests.patch \
-           file://0001-kvm-Fix-stack-access-mode-in-KVM-test-ELF-headers.patch \
-           file://0002-kvm-use-LD-instead-of-hardcoding-ld.patch \
-           file://0003-Add-KVM_LD-Makefile-variable-for-building-KVM-payloa.patch \
-           file://0001-nfs05_make_tree-Restore-5-min-timeout.patch \
-           file://0001-syscalls-migrate_pages03-restore-runtime-to-5m.patch \
-           file://0001-mountns0-1-3-wait-for-umount-completed-in-thread_b.patch \
-           file://0001-netstress-Restore-runtime-to-5m.patch \
-           file://0001-net_stress-Fix-usage-of-variables-from-tst_net.sh.patch \
-           file://0001-memcg-functional-Fix-usage-of-PAGESIZE-from-memcg_li.patch \
-           file://0001-lapi-pidfd-adding-pidfd-header-file.patch \
-           file://0001-lapi-fsmount-resolve-conflict-in-different-header-fi.patch \
-           file://0001-rt-migrate-Use-int-instead-of-pthread_t-for-thread-I.patch \
            "
 
 S = "${WORKDIR}/git"
@@ -53,7 +41,7 @@ inherit autotools-brokensep pkgconfig
 # https://github.com/linux-test-project/ltp/commit/3fce2064b54843218d085aae326c8f7ecf3a8c41#diff-39268f0855c634ca48c8993fcd2c95b12a65b79e8d9fa5ccd6b0f5a8785c0dd6R36
 LDFLAGS:append = "${@bb.utils.contains('DISTRO_FEATURES', 'ld-is-gold', ' -fuse-ld=bfd', '', d)}"
 
-# After 0002-kvm-use-LD-instead-of-hardcoding-ld.patch
+# After f94e0ef3b ("kvm: use $(LD) instead of hardcoding ld")
 # https://github.com/linux-test-project/ltp/commit/f94e0ef3b7280f886384703ef9019aaf2f2dfebb
 # it fails with gold also a bit later when trying to use *-payload.bin
 # http://errors.yoctoproject.org/Errors/Details/663094/
